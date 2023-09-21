@@ -13,15 +13,22 @@ export class AppComponent {
 
     switch (cleanNumber.length) {
       case 3:
-        const logic = `(${cleanNumber.slice(0, 3)})-${cleanNumber.slice(3, 6)}`;
+        const logic = `(${cleanNumber.slice(0, 3)})`;
         this.phoneNumber = logic;
         break;
-      case 6:
+      case 4:
         const logic1 = `(${cleanNumber.slice(0, 3)})-${cleanNumber.slice(
           3,
           6
-        )}-${cleanNumber.slice(6, 10)}`;
+        )}`;
         this.phoneNumber = logic1;
+        break;
+      case 7:
+        const logic2 = `(${cleanNumber.slice(0, 3)})-${cleanNumber.slice(
+          3,
+          6
+        )}-${cleanNumber.slice(6, 10)}`;
+        this.phoneNumber = logic2;
         break;
     }
 

@@ -11,14 +11,29 @@ export class AppComponent {
   numberFormate() {
     const cleanNumber = this.phoneNumber.replace(/\D/g, '');
 
-    if (cleanNumber.length >= 10) {
-      const logic = `(${cleanNumber.slice(0, 3)})-${cleanNumber.slice(
-        3,
-        6
-      )}-${cleanNumber.slice(6, 10)}`;
-      this.phoneNumber = logic;
-    } else {
-      alert('Please enter valid number');
+    switch (cleanNumber.length) {
+      case 3:
+        const logic = `(${cleanNumber.slice(0, 3)})-${cleanNumber.slice(3, 6)}`;
+        this.phoneNumber = logic;
+        break;
+      case 6:
+        const logic1 = `(${cleanNumber.slice(0, 3)})-${cleanNumber.slice(
+          3,
+          6
+        )}-${cleanNumber.slice(6, 10)}`;
+        this.phoneNumber = logic1;
+        break;
     }
+
+    // if (cleanNumber.length >= 3) {
+    //   const logic = `(${cleanNumber.slice(0, 3)})-${cleanNumber.slice(3, 6)}`;
+    //   this.phoneNumber = logic;
+    // } else if (cleanNumber.length >= 6) {
+    //   const logic = `(${cleanNumber.slice(0, 3)})-${cleanNumber.slice(
+    //     3,
+    //     6
+    //   )}-${cleanNumber.slice(6, 10)}`;
+    //   this.phoneNumber = logic;
+    // }
   }
 }

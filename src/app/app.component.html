@@ -1,8 +1,7 @@
 <input
   type="text"
   [(ngModel)]="phoneNumber"
-  maxlength="10"
+  (input)="numberFormate()"
+  maxlength="14"
   placeholder="(123)-123-1234"
 />
-
-<button (click)="numberFormate()">Submit</button>
